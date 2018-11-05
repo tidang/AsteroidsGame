@@ -8,10 +8,7 @@ class Star //note that this class does NOT extend Floater
   
   public void show(){
    fill(255);
-    PFont waves;
-    waves = loadFont("BlackadderITC-Regular-10");
-   textSize(10);
-   textFont(waves);
-   text("w", myX, myY); 
+    noStroke();
+    ellipse(myX, myY, 5, 5);
   }
 }

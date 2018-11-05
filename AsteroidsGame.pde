@@ -1,5 +1,9 @@
 Spaceship ship = new Spaceship();
 Star[] random;
+boolean space = false;
+boolean w = false;
+boolean a = false;
+boolean d = false;
 
 public void setup() 
 {
@@ -19,22 +23,39 @@ public void draw()
    random[i].show();
   }
 
-  
+  if(space == true){
+   hyperspace();
+}
+  if (w){
+      ship.accelerate(.02);
+  }
+  if (a){
+     ship.turn(-10); 
+  }
+  if (d){
+    ship.turn(10);
+  }
+
+
+
   ship.move();
   ship.show();
 }
+
 public void keyPressed(){
-  if(key == ' '){
-   hyperspace();
+ 
+    while (key == ' '){
+    boolean space = true;
 }
-  if (key == 'w'){
-      ship.accelerate(.02);
+  
+  while (key == 'w'){
+      boolean w = true;
   }
-  if (key == 'a'){
-     ship.turn(-30); 
+  while (key == 'a'){
+    boolean a = true;
   }
-  if (key == 'd'){
-    ship.turn(30);
+  while (key == 'd'){
+    boolean d = true;
   }
 }
 
