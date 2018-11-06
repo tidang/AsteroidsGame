@@ -1,9 +1,6 @@
 Spaceship ship = new Spaceship();
 Star[] random;
-boolean space = false;
-boolean w = false;
-boolean a = false;
-boolean d = false;
+private boolean a, w, d;
 
 public void setup() 
 {
@@ -23,17 +20,14 @@ public void draw()
    random[i].show();
   }
 
-  if(space == true){
-   hyperspace();
-}
   if (w){
       ship.accelerate(.02);
   }
   if (a){
-     ship.turn(-10); 
+     ship.turn(-5); 
   }
   if (d){
-    ship.turn(10);
+    ship.turn(5);
   }
 
 
@@ -44,20 +38,33 @@ public void draw()
 
 public void keyPressed(){
  
-    while (key == ' '){
-    boolean space = true;
+    if (key == ' '){
+    hyperspace();
 }
   
-  while (key == 'w'){
-      boolean w = true;
+  if (key == 'w'){
+     w = true;
   }
-  while (key == 'a'){
-    boolean a = true;
+  if (key == 'a'){
+   a = true;
   }
-  while (key == 'd'){
-    boolean d = true;
+ if (key == 'd'){
+   d = true;
   }
 }
+
+public void keyReleased(){
+  if (key == 'w'){
+     w = false;
+  }
+  if (key == 'a'){
+   a = false;
+  }
+ if (key == 'd'){
+   d = false;
+  }
+}
+
 
 
 public void hyperspace(){
