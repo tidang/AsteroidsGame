@@ -1,5 +1,6 @@
 Spaceship ship = new Spaceship();
 Star[] random;
+Asteroids trash = new Asteroids();
 private boolean a, w, d;
 
 public void setup() 
@@ -34,6 +35,8 @@ public void draw()
 
   ship.move();
   ship.show();
+  trash.show();
+  trash.move();
 }
 
 public void keyPressed(){
