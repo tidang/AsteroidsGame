@@ -1,7 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] random;
-Asteroids trash = new Asteroids();
-private boolean a, w, d;
+Asteroids [] trash;
+private boolean a, w, d, s;
 
 public void setup() 
 {
@@ -11,6 +11,18 @@ public void setup()
   random = new Star[100];
   for(int i = 0; i < random.length; i++){
    random[i] = new Star(); 
+   
+  }
+  
+  trash = new Asteroids [10];
+    for(int i = 0; i < trash.length; i++){
+   int cy = (int)(Math.random() * 501);
+   int cx = (int)(Math.random() * 501);
+   int dx = (int)(Math.random() * 2);
+   int dy = (int)(Math.random() * 2);
+   int pd = (int)(Math.random() * 360);
+   int rs = (int)(Math.random() * 2 + 1);
+   trash[i] = new Asteroids(dx, dy, cx, cy, pd, rs); 
   }
 }
 public void draw() 
@@ -21,8 +33,15 @@ public void draw()
    random[i].show();
   }
 
+  if(!w && !s){
+   ship.setDirectionX(ship.getDirectionX() * .95); 
+   ship.setDirectionY(ship.getDirectionY() * .95);
+  }
   if (w){
-      ship.accelerate(.02);
+      ship.accelerate(.04);
+  }
+  if (s){
+      ship.accelerate(-.04);
   }
   if (a){
      ship.turn(-5); 
@@ -35,8 +54,11 @@ public void draw()
 
   ship.move();
   ship.show();
-  trash.show();
-  trash.move();
+  
+   for(int i = 0; i < trash.length; i++){
+   trash[i].show();
+   trash[i].move();
+  }
 }
 
 public void keyPressed(){
@@ -47,6 +69,9 @@ public void keyPressed(){
   
   if (key == 'w'){
      w = true;
+  }
+  if (key == 's'){
+     s = true;
   }
   if (key == 'a'){
    a = true;
@@ -59,6 +84,9 @@ public void keyPressed(){
 public void keyReleased(){
   if (key == 'w'){
      w = false;
+  }
+   if (key == 's'){
+     s = false;
   }
   if (key == 'a'){
    a = false;
