@@ -6,8 +6,8 @@ class Asteroids extends Floater{
     corners = 15;
    xCorners = new int[corners];
    yCorners = new int[corners];
-   xCorners[0] = 2 * 5;
-   yCorners[0] = -2 * 5;
+   xCorners[0] = 2 * 10;
+   yCorners[0] = -2 * 10;
    xCorners[1] = 0 * 5;
    yCorners[1] = 0 * 5;
    xCorners[2] = -2 * 5;
@@ -34,8 +34,8 @@ class Asteroids extends Floater{
    yCorners[12] = -4 * 5;
    xCorners[13] = -2 * 5;
    yCorners[13] = -2 * 5;
-   xCorners[14] = 2 * 5;
-   yCorners[14] = 2 * 5;
+   xCorners[14] = 2 * 10;
+   yCorners[14] = 2 * 10;
    
    myColor = color(0);
    myCenterX = cx;
