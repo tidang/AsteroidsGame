@@ -18,8 +18,8 @@ public void setup()
     for(int i = 0; i < trash.length; i++){
    int cy = (int)(Math.random() * 501);
    int cx = (int)(Math.random() * 501);
-   int dx = (int)(Math.random() * 2);
-   int dy = (int)(Math.random() * 2);
+   int dx = (int)(Math.random() * 1 + 1);
+   int dy = (int)(Math.random() * 1 + 1);
    int pd = (int)(Math.random() * 360);
    int rs = (int)(Math.random() * 2 + 1);
    trash[i] = new Asteroids(dx, dy, cx, cy, pd, rs); 

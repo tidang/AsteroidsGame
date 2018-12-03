@@ -3,35 +3,39 @@ class Asteroids extends Floater{
   private int rotationSpeed;
   
   public Asteroids(int dx, int dy, int cx, int cy, int pd, int rs){
-    corners = 13;
+    corners = 15;
    xCorners = new int[corners];
    yCorners = new int[corners];
-   xCorners[0] = 5 * 3;
-   yCorners[0] = 5 * 3;
-   xCorners[1] = 0 * 3;
-   yCorners[1] = 0 * 3;
-   xCorners[2] = -5 * 3;
-   yCorners[2] = -6 * 3;
-   xCorners[3] = -8 * 3;
-   yCorners[3] = -8 * 3;
-   xCorners[4] = -11 * 3;
-   yCorners[4] = -6 * 3;
-   xCorners[5] = -16 * 3;
-   yCorners[5] = 0 * 3;
-   xCorners[6] = -11 * 3;
-   yCorners[6] = 6 * 3;
-   xCorners[7] = -8 * 3;
-   yCorners[7] = 8 * 3;
-   xCorners[8] = -5 * 3;
-   yCorners[8] = 6 * 3;
-   xCorners[9] = 0 * 3;
-   yCorners[9] = 0 * 3;
-   xCorners[10] = 5 * 3;
-   yCorners[10] = 5 * 3;
-    xCorners[11] = 5 * 3;
-   yCorners[11] = - 5 * 3;
-   xCorners[12] = 0 * 3;
-   yCorners[12] = 0 * 3;
+   xCorners[0] = 2 * 5;
+   yCorners[0] = -2 * 5;
+   xCorners[1] = 0 * 5;
+   yCorners[1] = 0 * 5;
+   xCorners[2] = -2 * 5;
+   yCorners[2] = 2 * 5;
+   xCorners[3] = -4 * 5;
+   yCorners[3] = 4 * 5;
+   xCorners[4] = -6 * 5;
+   yCorners[4] = 4 * 5;
+   xCorners[5] = -8 * 5;
+   yCorners[5] = 3 * 5;
+   xCorners[6] = -10 * 5;
+   yCorners[6] = 1 * 5;
+   xCorners[7] = -10 * 5;
+   yCorners[7] = -1 * 5;
+   xCorners[8] = -8 * 5;
+   yCorners[8] = -3 * 5;
+   xCorners[9] = -6 * 5;
+   yCorners[9] = -4 * 5;
+   xCorners[10] = -8 * 5;
+   yCorners[10] = -3 * 5;
+   xCorners[11] = -6 * 5;
+   yCorners[11] = -4 * 5;
+   xCorners[12] = -4 * 5;
+   yCorners[12] = -4 * 5;
+   xCorners[13] = -2 * 5;
+   yCorners[13] = -2 * 5;
+   xCorners[14] = 2 * 5;
+   yCorners[14] = 2 * 5;
    
    myColor = color(0);
    myCenterX = cx;
@@ -77,4 +81,6 @@ class Asteroids extends Floater{
   public double getDirectionY(){return myDirectionY;}  
   public void setPointDirection(int degrees){myPointDirection = degrees;}   
   public double getPointDirection(){return myPointDirection;} 
+  
+  
 }
