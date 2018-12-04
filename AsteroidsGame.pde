@@ -1,7 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] random;
-Asteroids [] trash;
 private boolean a, w, d, s;
+ArrayList<Asteroids> trash;
 
 public void setup() 
 {
@@ -14,15 +14,10 @@ public void setup()
    
   }
   
-  trash = new Asteroids [10];
-    for(int i = 0; i < trash.length; i++){
-   int cy = (int)(Math.random() * 501);
-   int cx = (int)(Math.random() * 501);
-   int dx = (int)(Math.random() * 2);
-   int dy = (int)(Math.random() * 2);
-   int pd = (int)(Math.random() * 360);
-   int rs = (int)(Math.random() * 2 + 1);
-   trash[i] = new Asteroids(dx, dy, cx, cy, pd, rs); 
+    ArrayList<Asteroids> trash = new ArrayList<Asteroids>();
+    for(int i = 0; i < 10; i++){
+    trash.add(i, new Asteroids());
+   
   }
 }
 public void draw() 
@@ -55,9 +50,12 @@ public void draw()
   ship.move();
   ship.show();
   
-   for(int i = 0; i < trash.length; i++){
-   trash[i].show();
-   trash[i].move();
+  for(int i = 0; i < trash.size(); i++){
+    trash.get(i).show();
+    trash.get(i).move();
+    float d = dist(ship.getX(), ship.getY(), trash.get(i).getX(), trash.get(i).getY());
+    if(d < 10)
+      trash.remove(i);
   }
 }
 
