@@ -1,7 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] random;
 private boolean a, w, d, s;
-ArrayList<Asteroids> trash;
+ArrayList<Asteroids> trash = new ArrayList<Asteroids>();
 
 public void setup() 
 {
@@ -14,10 +14,9 @@ public void setup()
    
   }
   
-    ArrayList<Asteroids> trash = new ArrayList<Asteroids>();
-    for(int i = 0; i < 10; i++){
-    trash.add(i, new Asteroids());
-   
+    
+    for(int i = 0; i < 15; i++){
+    trash.add(new Asteroids());
   }
 }
 public void draw() 
@@ -53,8 +52,9 @@ public void draw()
   for(int i = 0; i < trash.size(); i++){
     trash.get(i).show();
     trash.get(i).move();
+    
     float d = dist(ship.getX(), ship.getY(), trash.get(i).getX(), trash.get(i).getY());
-    if(d < 10)
+    if(d <= 40)
       trash.remove(i);
   }
 }
