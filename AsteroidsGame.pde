@@ -47,6 +47,7 @@ public void draw()
      ship.turn(-5); 
   }
   if (d){
+    println("Work?");
     ship.turn(5);
   }
 
