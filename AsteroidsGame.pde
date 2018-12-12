@@ -53,8 +53,8 @@ public void draw()
     trash.get(i).show();
     trash.get(i).move();
     
-    float d = dist(ship.getX(), ship.getY(), trash.get(i).getX(), trash.get(i).getY());
-    if(d <= 40)
+    float distance = dist(ship.getX(), ship.getY(), trash.get(i).getX(), trash.get(i).getY());
+    if(distance <= 40)
       trash.remove(i);
   }
 }
