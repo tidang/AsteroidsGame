@@ -13,7 +13,6 @@ public void setup()
    random[i] = new Star(); 
    
   }
-  
     
     for(int i = 0; i < 15; i++){
     trash.add(new Asteroids());
@@ -41,6 +40,7 @@ public void draw()
      ship.turn(-5); 
   }
   if (d){
+    //println("Work?");
     ship.turn(5);
   }
 
