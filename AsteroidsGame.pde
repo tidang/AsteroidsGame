@@ -1,7 +1,7 @@
 Spaceship ship = new Spaceship();
 Star[] random;
-Asteroids [] trash;
 private boolean a, w, d, s;
+ArrayList<Asteroids> trash = new ArrayList<Asteroids>();
 
 public void setup() 
 {
@@ -13,16 +13,9 @@ public void setup()
    random[i] = new Star(); 
    
   }
-  
-  trash = new Asteroids [10];
-    for(int i = 0; i < trash.length; i++){
-   int cy = (int)(Math.random() * 501);
-   int cx = (int)(Math.random() * 501);
-   int dx = (int)(Math.random() * 1 + 1);
-   int dy = (int)(Math.random() * 1 + 1);
-   int pd = (int)(Math.random() * 360);
-   int rs = (int)(Math.random() * 2 + 1);
-   trash[i] = new Asteroids(dx, dy, cx, cy, pd, rs); 
+    
+    for(int i = 0; i < 15; i++){
+    trash.add(new Asteroids());
   }
 }
 public void draw() 
@@ -47,7 +40,7 @@ public void draw()
      ship.turn(-5); 
   }
   if (d){
-    println("Work?");
+    //println("Work?");
     ship.turn(5);
   }
 
@@ -56,9 +49,13 @@ public void draw()
   ship.move();
   ship.show();
   
-   for(int i = 0; i < trash.length; i++){
-   trash[i].show();
-   trash[i].move();
+  for(int i = 0; i < trash.size(); i++){
+    trash.get(i).show();
+    trash.get(i).move();
+    
+    float d = dist(ship.getX(), ship.getY(), trash.get(i).getX(), trash.get(i).getY());
+    if(d <= 40)
+      trash.remove(i);
   }
 }
 
